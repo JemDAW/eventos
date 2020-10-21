@@ -10,24 +10,33 @@ window.onmousemove = function (){
 }
 
 //2
-/*
+
 var intervalo;
 window.addEventListener("load", activarScript, false);
 
 function activarScript(){
 
-    window.addEventListener("click", comenzarSaludo, false);
-    window.addEventListener("click", pararSaludo, false);
+    document.getElementById("comenzar").addEventListener("click", comenzarSaludo, false);
+    document.getElementById("parar").addEventListener("click", pararSaludo, false);
 }
 
 function comenzarSaludo(){
-   intervalo= setInterval();
+   intervalo= setInterval(usoH1, 5000);
 }
 
 function pararSaludo(){
     clearInterval(intervalo);
 }
-*/
+
+function usoH1(){
+
+	if (document.getElementById("ocultar").style.display == "none"){
+		document.getElementById("ocultar").style.display = "block";
+	}else{
+		document.getElementById("ocultar").style.display = "none";
+	}
+}
+
 //3
 
 function generarLetra(){
@@ -51,3 +60,4 @@ function cambiarColor(){
 window.addEventListener("dblclick", cambiarColor, false);
 
 //4
+
