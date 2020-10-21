@@ -60,4 +60,24 @@ function cambiarColor(){
 window.addEventListener("dblclick", cambiarColor, false);
 
 //4
+window.addEventListener("load", alCargar, false);
 
+function alCargar(){
+document.getElementById("drag").addEventListener("dragover", allowDrop,false);
+document.getElementById("drag").addEventListener("drop", drop,false);
+document.getElementById("drag2").addEventListener("dragstart", drag,false);
+}
+
+function allowDrop(ev) {
+	ev.preventDefault();
+  }
+
+  function drag(ev) {
+	ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+	ev.preventDefault();
+	var data = ev.dataTransfer.getData("text");
+	document.getElementById("drag").src= "img/papeleraLlena.png";
+  }
